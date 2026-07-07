@@ -125,7 +125,7 @@ async function  fetchRepositoryForCurrentUser  (req, res)  {
 
 async function  updateRepositoryById  (req, res)  {
     const {id} = req.params;
-    const {content, description} = req.body;
+    const {content, description, fileData} = req.body;
 
     try{
         const repository = await Repository.findById(id);
@@ -136,6 +136,9 @@ async function  updateRepositoryById  (req, res)  {
 
         if (content) repository.content.push(content);
         if (description) repository.description = description;
+        if (content && fileData) {
+            repository.fileDetails.push({ name: content, data: fileData });
+        }
 
         const updatedRepository = await repository.save();
 

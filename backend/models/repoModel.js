@@ -17,6 +17,12 @@ const RepositorySchema = new Schema({
             type: String,
             }
         ],
+        fileDetails: [
+            {
+                name: String,
+                data: String
+            }
+        ],
         visibility: {
             type: Boolean,
 

@@ -52,7 +52,10 @@ async function pushRepo() {
                                 headers: {
                                     'Content-Type': 'application/json',
                                 },
-                                body: JSON.stringify({ content: file })
+                                body: JSON.stringify({ 
+                                    content: file,
+                                    fileData: fileContent.toString('utf8')
+                                })
                             });
                             if (!response.ok) {
                                 console.error(`Failed to register ${file} in MongoDB`);

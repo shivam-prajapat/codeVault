@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Book, Globe, Lock, Code, FileText, Terminal, Settings, GitCommit, Search, Plus } from 'lucide-react';
+import { Book, Globe, Lock, Code, FileText, Terminal, Settings, GitCommit, Search, Plus, Sparkles } from 'lucide-react';
 import { repoService } from '../../api/repo.service';
 import IssueList from '../../components/issue/IssueList';
+import AIReviewModal from '../../components/repo/AIReviewModal';
 
 const RepoDetail = () => {
   const { id } = useParams();
   const [repo, setRepo] = useState(null);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('code');
+  const [isAIModalOpen, setIsAIModalOpen] = useState(false);
 
   useEffect(() => {
     const fetchRepo = async () => {
@@ -69,6 +71,14 @@ const RepoDetail = () => {
 
         {/* Git Actions Bar */}
         <div className="flex items-center gap-3 bg-white/5 p-1.5 rounded-2xl border border-white/10 shadow-lg">
+          <button 
+            onClick={() => setIsAIModalOpen(true)}
+            className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500/20 to-blue-500/20 hover:from-purple-500/40 hover:to-blue-500/40 border border-purple-500/30 rounded-xl text-sm font-bold transition-all text-purple-300 shadow-[0_0_15px_rgba(168,85,247,0.15)] group"
+          >
+            <Sparkles size={16} className="text-yellow-400 group-hover:scale-110 transition-transform" /> 
+            AI Review
+          </button>
+          <div className="w-px h-6 bg-white/10 mx-1"></div>
           <button className="flex items-center gap-2 px-4 py-2 hover:bg-white/10 rounded-xl text-sm font-semibold transition-colors text-white">
             <Plus size={16} /> Init
           </button>
@@ -192,6 +202,12 @@ const RepoDetail = () => {
         </motion.div>
       </AnimatePresence>
 
+      <AIReviewModal 
+        isOpen={isAIModalOpen}
+        onClose={() => setIsAIModalOpen(false)}
+        repoId={repo._id}
+        repoName={repo.name}
+      />
     </div>
   );
 };
