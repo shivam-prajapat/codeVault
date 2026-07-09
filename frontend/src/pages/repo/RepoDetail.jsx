@@ -168,10 +168,10 @@ const RepoDetail = () => {
                       <p className="text-gray-400 mb-2"># Quick setup</p>
                       <div className="text-codevault-accent mb-4">
                         <span className="text-purple-400">echo</span> "console.log('hello world')" <span className="text-purple-400">{'>'}</span> index.js<br/>
-                        node index.js init {repo._id}<br/>
-                        node index.js add index.js<br/>
-                        node index.js commit -m "first commit"<br/>
-                        node index.js push
+                        codevault init {repo._id}<br/>
+                        codevault add index.js<br/>
+                        codevault commit -m "first commit"<br/>
+                        codevault push
                       </div>
                     </div>
                   </div>

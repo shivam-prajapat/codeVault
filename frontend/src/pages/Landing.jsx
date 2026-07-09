@@ -8,12 +8,12 @@ const Landing = () => {
 
   // Simple terminal typing simulator
   useEffect(() => {
-    const timer1 = setTimeout(() => setTerminalStep(1), 1000); // node index.js init
+    const timer1 = setTimeout(() => setTerminalStep(1), 1000); // codevault init
     const timer2 = setTimeout(() => setTerminalStep(2), 2500); // output
-    const timer3 = setTimeout(() => setTerminalStep(3), 4000); // node index.js add .
-    const timer4 = setTimeout(() => setTerminalStep(4), 5500); // node index.js commit
+    const timer3 = setTimeout(() => setTerminalStep(3), 4000); // codevault add .
+    const timer4 = setTimeout(() => setTerminalStep(4), 5500); // codevault commit
     const timer5 = setTimeout(() => setTerminalStep(5), 7000); // output
-    const timer6 = setTimeout(() => setTerminalStep(6), 8500); // node index.js push
+    const timer6 = setTimeout(() => setTerminalStep(6), 8500); // codevault push
     const timer7 = setTimeout(() => setTerminalStep(7), 10000); // output
     const timer8 = setTimeout(() => setTerminalStep(0), 14000); // loop
     
@@ -114,7 +114,7 @@ const Landing = () => {
               {/* Step 1: Init */}
               {terminalStep >= 1 && (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-                  <span className="text-codevault-accent font-bold">~</span> $ <span className="text-white">node index.js init</span>
+                  <span className="text-codevault-accent font-bold">~</span> $ <span className="text-white">codevault init</span>
                 </motion.div>
               )}
               {terminalStep >= 2 && (
@@ -126,14 +126,14 @@ const Landing = () => {
               {/* Step 2: Add */}
               {terminalStep >= 3 && (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-                  <span className="text-codevault-accent font-bold">~</span> $ <span className="text-white">node index.js add index.js</span>
+                  <span className="text-codevault-accent font-bold">~</span> $ <span className="text-white">codevault add index.js</span>
                 </motion.div>
               )}
 
               {/* Step 3: Commit */}
               {terminalStep >= 4 && (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-                  <span className="text-codevault-accent font-bold">~</span> $ <span className="text-white">node index.js commit "Initial launch"</span>
+                  <span className="text-codevault-accent font-bold">~</span> $ <span className="text-white">codevault commit "Initial launch"</span>
                 </motion.div>
               )}
               {terminalStep >= 5 && (
@@ -145,7 +145,7 @@ const Landing = () => {
               {/* Step 4: Push */}
               {terminalStep >= 6 && (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-                  <span className="text-codevault-accent font-bold">~</span> $ <span className="text-white">node index.js push</span>
+                  <span className="text-codevault-accent font-bold">~</span> $ <span className="text-white">codevault push</span>
                 </motion.div>
               )}
               {terminalStep >= 7 && (

@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const dotenv = require("dotenv").config({ path: require("path").resolve(__dirname, "../.env") });
 const express = require("express");
 const cors = require("cors");

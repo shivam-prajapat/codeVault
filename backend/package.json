@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "bin": {
+    "codevault": "./index.js"
+  },
   "scripts": {
     "start": "node index.js start"
   },
