@@ -36,7 +36,6 @@ const ProjectRoutes = () => {
       <Route path="/landing" element={currentUser ? <Navigate to="/dashboard" /> : <Landing />} />
       <Route path="/login" element={currentUser ? <Navigate to="/dashboard" /> : <Login />} />
       <Route path="/signup" element={currentUser ? <Navigate to="/dashboard" /> : <Signup />} />
-      <Route path="/forgot-password" element={currentUser ? <Navigate to="/dashboard" /> : <ForgotPassword />} />
 
       {/* Protected Routes wrapped in Global Layout */}
       <Route element={<ProtectedRoute />}>
