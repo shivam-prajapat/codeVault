@@ -51,7 +51,12 @@ const Login = () => {
         </div>
 
         <div className="space-y-2">
-          <label className="block text-sm font-medium text-gray-400 tracking-wider">ENCRYPTION KEY</label>
+          <div className="flex justify-between items-center">
+            <label className="block text-sm font-medium text-gray-400 tracking-wider">ENCRYPTION KEY</label>
+            <Link to="/forgot-password" className="text-xs text-codevault-accent hover:text-codevault-secondary transition-colors">
+              Forgot Password?
+            </Link>
+          </div>
           <input
             type="password"
             required

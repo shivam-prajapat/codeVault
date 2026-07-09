@@ -9,6 +9,7 @@ import CreateRepo from './pages/repo/CreateRepo';
 import RepoDetail from './pages/repo/RepoDetail';
 import Login from './pages/auth/Login';
 import Signup from './pages/auth/Signup';
+import ForgotPassword from './pages/auth/ForgotPassword';
 import NotFound from './pages/NotFound';
 
 // Layout & Guards
@@ -36,6 +37,7 @@ const ProjectRoutes = () => {
       <Route path="/landing" element={currentUser ? <Navigate to="/dashboard" /> : <Landing />} />
       <Route path="/login" element={currentUser ? <Navigate to="/dashboard" /> : <Login />} />
       <Route path="/signup" element={currentUser ? <Navigate to="/dashboard" /> : <Signup />} />
+      <Route path="/forgot-password" element={currentUser ? <Navigate to="/dashboard" /> : <ForgotPassword />} />
 
       {/* Protected Routes wrapped in Global Layout */}
       <Route element={<ProtectedRoute />}>
