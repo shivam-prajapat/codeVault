@@ -46,7 +46,7 @@ async function pushRepo() {
                     
                     if (repoID) {
                         try {
-                            const apiUrl = process.env.API_URL || 'http://localhost:3000';
+                            const apiUrl = process.env.VITE_API_URL || process.env.API_URL || 'http://localhost:3000';
                             const response = await fetch(`${apiUrl}/repo/update/${repoID}`, {
                                 method: 'PUT',
                                 headers: {
