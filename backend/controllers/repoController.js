@@ -134,10 +134,17 @@ async function  updateRepositoryById  (req, res)  {
             return res.status(404).json({error: "Repository not found"})
         }
 
-        if (content) repository.content.push(content);
+        if (content && !repository.content.includes(content)) {
+            repository.content.push(content);
+        }
         if (description) repository.description = description;
         if (content && fileData) {
-            repository.fileDetails.push({ name: content, data: fileData });
+            const existingFileIndex = repository.fileDetails.findIndex(file => file.name === content);
+            if (existingFileIndex !== -1) {
+                repository.fileDetails[existingFileIndex].data = fileData;
+            } else {
+                repository.fileDetails.push({ name: content, data: fileData });
+            }
         }
 
         const updatedRepository = await repository.save();

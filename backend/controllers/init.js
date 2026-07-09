@@ -7,6 +7,9 @@ async function initRepo(repoID) {
     const commitsPath = path.join(repoPath, "commit");
 
     try{
+        await fs.rm(path.join(repoPath, "staging"), { recursive: true, force: true }).catch(() => {});
+        await fs.rm(commitsPath, { recursive: true, force: true }).catch(() => {});
+        
         await fs.mkdir(repoPath, { recursive: true});
         await fs.mkdir(commitsPath, { recursive: true});
         
