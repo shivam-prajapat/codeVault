@@ -9,7 +9,6 @@ import CreateRepo from './pages/repo/CreateRepo';
 import RepoDetail from './pages/repo/RepoDetail';
 import Login from './pages/auth/Login';
 import Signup from './pages/auth/Signup';
-import ForgotPassword from './pages/auth/ForgotPassword';
 import NotFound from './pages/NotFound';
 
 // Layout & Guards

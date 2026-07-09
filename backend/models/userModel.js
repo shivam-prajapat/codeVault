@@ -44,12 +44,6 @@ const UserSchema = new Schema({
             type: Date,
         },
     ],
-    resetOtp: {
-        type: String,
-    },
-    resetOtpExpire: {
-        type: Date,
-    }
 });
 
 const User = mongoose.model("User",UserSchema);
