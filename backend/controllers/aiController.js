@@ -81,7 +81,7 @@ async function generateCodeReview(req, res) {
         res.json({ review: response.text });
     } catch (err) {
         console.error("Error generating AI review:", err.message);
-        res.status(500).json({ error: "Failed to generate AI review. Please check your API Key." });
+        res.status(500).json({ error: `Analysis Failed: ${err.message}` });
     }
 }
 
