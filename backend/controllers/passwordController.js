@@ -26,7 +26,7 @@ async function forgotPassword(req, res) {
             secure: true, // Use SSL
             auth: {
                 user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS
+                pass: (process.env.EMAIL_PASS || "").replace(/\s+/g, '')
             },
             connectionTimeout: 10000, // 10s timeout so it doesn't hang forever
             greetingTimeout: 10000,
